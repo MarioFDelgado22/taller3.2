@@ -1,0 +1,93 @@
+<HTML>
+
+<HEAD>
+
+    <TITLE>JavaScript Index</TITLE>
+
+    <script Language="JavaScript">
+
+
+        function gettheDate() {
+
+            Todays = new Date();
+            TheDate = "" + (Todays.getMonth() + 1) + " / " + Todays.getDate() + " / " + (Todays.getYear() + 1900)
+            //document.clock.thedate.value = TheDate;
+            return TheDate;
+        }
+
+        var timerID = null;
+        var timerRunning = false;
+        function stopclock() {
+            if (timerRunning)
+                clearTimeout(timerID);
+            timerRunning = false;
+        }
+
+        function startclock() {
+            // Make sure the clock is stopped
+            stopclock();
+            gettheDate()
+            showtime();
+            Concatenar();
+        }
+
+        function showtime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds()
+            var timeValue = "" + ((hours > 12) ? hours - 12 : hours)
+            timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+            timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+            timeValue += (hours >= 12) ? " P.M." : " A.M."
+            //document.clock.face.value = timeValue;
+            timerRunning = true;
+            return timeValue;
+        }
+        function Concatenar() {
+            let con = document.getElementById("unido");
+            con.innerHTML = gettheDate() + " || " + showtime();
+            con.style.textAlign = "center";
+            timerID = setTimeout(Concatenar, 1000);
+
+        }
+    </script>
+
+</HEAD>
+
+
+<BODY bgcolor="khaki" onLoad="startclock()">
+
+    <style>
+        h2 {
+                color: #45322e
+            }
+    
+            ;
+
+            tr{ color: #45322e};
+    </style>
+
+    <CENTER>
+        <h2>Reloj Calendario</h2>
+        <table border>
+            <tr>
+                <td>
+                    <form name="clock" onSubmit="0">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan=1>
+                    <center>Fecha y hora</center>
+                </td>
+            </tr>
+            <tr>
+                <td id="unido" colspan=2> </td>
+            </tr>
+        </table>
+    </CENTER>
+    <hr>
+</BODY>
+
+</HTML>

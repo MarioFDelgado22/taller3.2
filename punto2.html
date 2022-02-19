@@ -1,0 +1,125 @@
+<HTML>
+
+<HEAD>
+
+
+
+
+
+
+</HEAD>
+
+<body bgcolor="khaki">
+    <style>
+        h1 {
+            color: #45322e
+        }
+
+        ;
+    </style>
+
+    <center>
+
+        <h1>Dias de la semana</h1>
+
+        <!--campo de texto-->
+        <input id="entrada" type="text" placeholder="Digite un  dia de la semana">
+
+        <!--boton-->
+        <input id="boton" type="submit" value="agregar">
+
+
+
+    </center>
+
+    <ul>
+        <!--inicio  de la ul-->
+        <li>Lista de dias digitados</li>
+
+    </ul>
+    <!--final de lista desordenada-->
+
+    <script Language="JavaScript">
+
+        function nombreDia(num) {
+            var dia;
+            if (num == 1) {
+                dia = "lunes";
+                return dia
+            }
+
+            if (num == 2) {
+                dia = "martes";
+                return dia
+            }
+
+            if (num == 3) {
+                dia = "miercoles";
+                return dia
+            }
+
+            if (num == 4) {
+                dia = "jueves";
+                return dia
+            }
+
+            if (num == 5) {
+                dia = "viernes";
+                return dia
+            }
+
+            if (num == 6) {
+                dia = "sabado";
+                return dia
+            }
+
+            if (num == 7) {
+                dia = "domingo";
+                return dia
+            }
+
+            else {
+                dia = "dia no existente ";
+                alert("datos mal  digitados")
+                return dia
+                
+            }
+
+
+        }
+
+
+        function tomarValor() {
+
+            //guarada el  texto  obtenido  en  una varible
+            var entrada = input.value
+
+            //var nombre = nombreDia(entrada)
+
+            //se crea un nuevo  elemento  tipo li
+            var li = document.createElement("li")
+
+            //se ingresa el  texto  del  input en  el  li
+            li.textContent = nombreDia(entrada)
+
+            //se añade el nuevo  li  en  la ul 
+            entradas.appendChild(li)
+        }
+
+        //obtener el elemento que se ingresa en entrada
+        var input = document.getElementById("entrada")
+
+        //para obtener la accion  que se realice en  el  boton 
+        var boton = document.getElementById("boton")
+
+        //para recibir todos los elementos de la ul
+        var entradas = document.querySelector("ul")
+
+        //acccion  que se reañizara cuando  se haga click  en  el  boton
+        boton.addEventListener("click", tomarValor)
+
+
+    </script>
+</body>
+
+</HTML>
