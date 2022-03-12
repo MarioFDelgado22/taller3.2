@@ -1,0 +1,66 @@
+<html>
+
+<head>
+
+    <title>
+        formulario
+    </title>
+
+</head>
+
+
+<body>
+
+
+
+
+    <h5>LOGIN </h5>
+    <!--campo de texto usuario-->
+    <input id="usuario" type="text" placeholder="USUARIO">
+    <br>
+    <br>
+    <!--campo de texto contraseña-->
+    <input id="contraseña" type="password" placeholder="CONTRASEÑA">
+    <br>
+    <br>
+    <!--boton-->
+    <input id="boton" type="submit" value="INGRESAR">
+
+    <script Language="JavaScript">
+
+
+
+
+        function tomarValor() {
+
+            //obtener el elemento que se ingresa en entrada
+            var usuario = document.getElementById("usuario").value
+            var contraseña = document.getElementById("contraseña").value
+
+
+
+            if (usuario === "mario" && contraseña === "1234") {
+                window.alert("usted ha ingresado");
+            } else {
+                window.alert("datos mal digitados");
+            }
+
+           
+        }
+
+
+
+        //para obtener la accion  que se realice en  el  boton 
+        var boton = document.getElementById("boton")
+
+
+
+        //acccion  que se reañizara cuando  se haga click  en  el  boton
+        boton.addEventListener("click", tomarValor)
+
+
+    </script>
+
+</body>
+
+</html>
